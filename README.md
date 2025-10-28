@@ -35,6 +35,7 @@ The app features a light lavender glassmorphism-inspired UI for a clean, modern,
 | **Firebase Realtime Database** | Live task synchronization and storage       |
 
 📂 Project Structure
+
 task-tracker/
 ├── index.html          # Main app layout and auth modal
 ├── styles.css          # Glassmorphism styling and responsiveness
@@ -61,10 +62,9 @@ UI Interaction
  - Productivity analytics dashboard
 
 👩‍💻 Author
+
 Varsha T
+
 🎓 B.E. in Information Science and Engineering (2022–2026)
 💼 Passionate about Frontend Development, UI/UX Design, and Cloud-integrated Web Apps
-
-Clean typography for clarity and focus
-
 Fully responsive — works seamlessly on desktops, tablets, and mobiles
