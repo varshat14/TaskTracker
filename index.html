@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task Tracker — Private (Auth)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Quick fixes for modal overlay */
+    .modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+    .modal.hidden { 
+      opacity: 0; 
+      pointer-events: none; 
+    }
+    .modal-content {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      width: 320px;
+      position: relative;
+      animation: pop 0.3s ease;
+    }
+    @keyframes pop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .icon-btn { position: absolute; top: 8px; right: 8px; background: none; border: none; cursor: pointer; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="hdr-left">
+        <h1>Task Tracker</h1>
+        <p class="tagline">Private tasks — sign in to sync across devices</p>
+      </div>
+      <div class="hdr-right" id="auth-area">
+        <button id="btn-signin" class="ghost">Sign in</button>
+      </div>
+    </header>
+
+    <!-- Visible only when user is signed in -->
+    <main id="main-app" class="hidden">
+      <form id="task-form" class="task-form">
+        <input id="task-input" placeholder="Add a new task (press Enter or click +)" required />
+        <input id="due-input" type="date" title="Due date" />
+        <button id="add-btn" title="Add task">+</button>
+      </form>
+
+      <div class="filters">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="active">Active</button>
+        <button data-filter="completed">Completed</button>
+      </div>
+
+      <ul id="tasks" class="tasks" aria-live="polite"></ul>
+    </main>
+
+    <!-- Shown only when signed out -->
+    <div id="signed-out" class="panel">
+      <p><strong>You're not signed in.</strong> Sign in with email to keep your tasks private and synced.</p>
+      <div style="display:flex; gap:8px; margin-top:8px;">
+        <button id="open-login" class="primary">Sign in / Register</button>
+      </div>
+    </div>
+
+    <footer>
+      <small>Built with JavaScript, HTML, CSS & Firebase (Auth + Realtime DB)</small>
+    </footer>
+  </div>
+
+  <!-- Auth modal -->
+  <div id="auth-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+    <div class="modal-content">
+      <h2 id="auth-title">Sign In</h2>
+      <form id="auth-form">
+        <input id="email" type="email" placeholder="Email" required />
+        <input id="password" type="password" placeholder="Password (6+ chars)" required />
+        <div class="row" style="display:flex; gap:8px; margin-top:10px;">
+          <button id="auth-submit" class="primary">Sign In</button>
+          <button id="auth-toggle" type="button" class="ghost">Create account</button>
+        </div>
+      </form>
+      <button id="modal-close" class="icon-btn">✕</button>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
