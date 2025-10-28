@@ -34,13 +34,6 @@ The app features a light lavender glassmorphism-inspired UI for a clean, modern,
 | **Firebase Authentication**    | Secure login & registration system          |
 | **Firebase Realtime Database** | Live task synchronization and storage       |
 
-📂 Project Structure
-
-task-tracker/
-├── index.html          # Main app layout and auth modal
-├── styles.css          # Glassmorphism styling and responsiveness
-├── app.js              # Firebase config + logic for auth and CRUD
-└── README.md           # Project documentation
 
 ⚙️ How It Works
 User Authentication
