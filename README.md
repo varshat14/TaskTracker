@@ -1,4 +1,4 @@
-**🌸 Task Tracker — Real-time Cloud-based Productivity App**
+#🌸 Task Tracker — Real-time Cloud-based Productivity App
 
 🔗 Live Demo: https://varshat14.github.io/TaskTracker/
 
@@ -59,5 +59,6 @@ UI Interaction
 Varsha T
 
 🎓 B.E. in Information Science and Engineering (2022–2026)
+
 💼 Passionate about Frontend Development, UI/UX Design, and Cloud-integrated Web Apps
-Fully responsive — works seamlessly on desktops, tablets, and mobiles
+
